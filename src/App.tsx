@@ -1,24 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Clock from './components/Clock';
 
-function App() {
+
+let testProp: string = 'Am I getting passed to the Clock component?'; // variables with type string which will be passed as props to the Clock component
+let optionalProp: string = 'You sure are!';
+
+      //1         //2                           // 1. The name of the functional component
+const App: React.FunctionComponent = () => {    // 2. By including ":", we are assigning "App" the type of FunctionComponent
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='verticalCenter'>
+        <Clock testProp={testProp} optionalProp={optionalProp} />
+      </div>
     </div>
   );
 }
